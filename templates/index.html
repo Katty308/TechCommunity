@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechCommunity</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'styles.css') }}">
 </head>
 <body>
     <header class="header">
@@ -32,19 +32,19 @@
         <!-- Botones para seleccionar el tipo de emergencia -->
         <div class="emergency-buttons">
             <button class="emergency-btn" id="medicalBtn">
-                <img src="./assets/Logo emergencias medicas original.png" alt="Emergencia Médica">
+                <img src="{{ url_for('static', filename = 'img/Logo emergencias medicas original.png') }}" alt="Emergencia Médica">
                 <p>Médica</p>
             </button>
             <button class="emergency-btn" id="fireBtn">
-                <img src="./assets/incendio.png" alt="Incendio">
+                <img src="{{ url_for('static', filename = 'img/incendio.png') }}" alt="Incendio">
                 <p>Incendio</p>
             </button>
             <button class="emergency-btn" id="securityBtn">
-                <img src="./assets/seguridad.png" alt="Seguridad">
+                <img src="{{ url_for('static', filename = 'img/seguridad.png') }}" alt="Seguridad">
                 <p>Seguridad</p>
             </button>
             <button class="emergency-btn" id="naturalBtn">
-                <img src="./assets/desastres naturales.png" alt="Desastre Natural">
+                <img src="{{ url_for('static', filename = 'img/desastres naturales.png') }}" alt="Desastre Natural">
                 <p>Desastre Natural</p>
             </button>
         </div>
@@ -99,6 +99,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename = 'script.js') }}"></script>
 </body>
 </html>
