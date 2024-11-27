@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechCommunity</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>TechCommunity</h1>
+    </header>
+
+    <div class="container">
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <div class="card">
+                <h2>Emergencias Activas</h2>
+                <div id="activeEmergencies" class="stat-value">0</div>
+            </div>
+            <div class="card">
+                <h2>Recursos Disponibles</h2>
+                <div id="availableResources" class="stat-value">0</div>
+            </div>
+            <div class="card">
+                <h2>Tiempo de Respuesta Promedio</h2>
+                <div id="averageResponse" class="stat-value">0 min</div>
+            </div>
+        </div>
+        
+
+        <!-- Botones para seleccionar el tipo de emergencia -->
+        <div class="emergency-buttons">
+            <button class="emergency-btn" id="medicalBtn">
+                <img src="./assets/Logo emergencias medicas original.png" alt="Emergencia Médica">
+                <p>Médica</p>
+            </button>
+            <button class="emergency-btn" id="fireBtn">
+                <img src="./assets/incendio.png" alt="Incendio">
+                <p>Incendio</p>
+            </button>
+            <button class="emergency-btn" id="securityBtn">
+                <img src="./assets/seguridad.png" alt="Seguridad">
+                <p>Seguridad</p>
+            </button>
+            <button class="emergency-btn" id="naturalBtn">
+                <img src="./assets/desastres naturales.png" alt="Desastre Natural">
+                <p>Desastre Natural</p>
+            </button>
+        </div>
+
+        <!-- Formulario para Reportar Emergencia -->
+        <div class="emergency-form" id="emergencyFormContainer" style="display:none;">
+            <h2>Reportar Nueva Emergencia</h2>
+            <form id="emergencyForm">
+                <div class="form-group">
+                    <label for="type">Tipo de Emergencia</label>
+                    <select id="type" required>
+                        <option value="">Seleccione tipo</option>
+                        <option value="medical">Médica</option>
+                        <option value="fire">Incendio</option>
+                        <option value="security">Seguridad</option>
+                        <option value="natural">Desastre Natural</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Ubicación</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <textarea id="description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Prioridad</label>
+                    <select id="priority" required>
+                        <option value="">Seleccione prioridad</option>
+                        <option value="high">Alta</option>
+                        <option value="medium">Media</option>
+                        <option value="low">Baja</option>
+                    </select>
+                </div>
+                <!-- Campo para subir evidencia -->
+                <div class="form-group">
+                    <label for="evidence">Subir evidencia (imágenes, documentos, etc.)</label>
+                    <input type="file" id="evidence" name="evidence" accept="image/*,application/pdf,.doc,.docx" multiple>
+                </div>
+                <button type="submit" class="btn-primary">Reportar Emergencia</button>
+            </form>
+        </div>
+
+        <div class="emergency-list" id="emergencyList"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 TechCommunity. Todos los derechos reservados.</p>
+            <p><a href="mailto:contact@techcommunity.com">contact@techcommunity.com</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
